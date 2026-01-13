@@ -1,0 +1,626 @@
+
+/* ---------- Navbar Glass Card ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.12),
+    0 4px 16px 0 rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+  border-radius: 16px;
+  width: calc(100% - 30px);
+  height: 65px;
+  margin: 15px auto;
+  max-width: 1400px;
+  transition: all 0.3s ease;
+}
+
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 12px 40px 0 rgba(31, 38, 135, 0.18),
+    0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+}
+
+.navbar-brand .brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d4d 0%, #A20C10 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: transform 0.25s ease, text-shadow 0.25s ease;
+}
+
+.navbar-brand .brand-logo:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 5px 15px rgba(102, 126, 234, 0.25);
+}
+#project_name.pro {
+  background-color: #2d3748;
+  color: #ffffff;
+}
+/* ---------- Nav Links ---------- */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+  position: relative;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  color: #2d3748;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+  opacity: 0;
+  border-radius: 12px;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  color: #4a5568;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+.nav-link.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.25);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  z-index: 1;
+}
+
+.nav-label {
+  font-size: 1rem;
+  z-index: 1;
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  list-style: none;
+  padding: 0.25rem 0;
+  min-width: 160px;
+  z-index: 1200;
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #2d3748;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.dropdown-link:hover {
+  background: #f7fafc;
+}
+
+/* ---------- Popup ---------- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  max-width: 420px;
+  width: 92%;
+}
+
+/* ---------- Form Elements Base ---------- */
+label {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.form-block label {
+  color: inherit;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #1a202c;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(66, 153, 225, 0.9);
+  box-shadow: 0 4px 18px rgba(66,153,225,0.08);
+}
+
+/* ---------- Main Layout ---------- */
+.main-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem 0 1rem;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 1.25rem auto 3rem;
+  align-items: flex-start;
+}
+
+/* Left side stacked vertically */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 40%;
+  min-width: 280px;
+}
+
+/* Project Details box */
+.project-details-box {
+  background-color: #2d3748;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Leave Application box */
+.leave-application-box {
+  background-color: #ffffff;
+  color: #1a202c;
+  background-color: #2d3748;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: 280px;
+}
+
+/* Headings inside boxes */
+.project-details-box h3,
+.leave-application-box h3,
+.right-panel h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+/* ---------- Inline Form Block ---------- */
+.form-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.form-block label {
+  width: 120px;
+  margin-right: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  display: inline-block;
+}
+
+/* Inputs inside dark project box */
+.project-details-box input,
+.project-details-box select {
+  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Keep placeholders readable on dark background */
+.project-details-box input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Generic input/select styles for inline layout */
+.form-block input,
+.form-block select,
+.form-block textarea {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #1a202c;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* When inputs are inside .project-details-box, override to dark style */
+.project-details-box .form-block input,
+.project-details-box .form-block select,
+.project-details-box .form-block textarea {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Focus states */
+.form-block input:focus,
+.form-block select:focus,
+.form-block textarea:focus {
+  border-color: rgba(66, 153, 225, 0.9);
+  box-shadow: 0 4px 18px rgba(66,153,225,0.08);
+}
+
+/* For white background forms (leave box) override label color */
+.leave-application-box .form-block label {
+  color: #4a5568;
+}
+
+/* Buttons */
+.apply-button,
+.submit-button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* Primary dark button */
+.apply-button {
+  background: linear-gradient(90deg, #2d3748 0%, #4a5568 100%);
+  color: #fff;
+}
+
+.apply-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(45,55,72,0.18);
+}
+
+/* Timesheet submit button */
+.submit-button {
+  background: #2d3748;
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+}
+
+.submit-button:hover {
+  background: #4a5568;
+}
+
+/* ---------- Right Panel Timesheet ---------- */
+.right-panel {
+  width: 60%;
+  min-width: 360px;
+  background-color: black;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  height: 470px;
+  overflow-y: auto;
+}
+.timesheeet, .h2 {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+  min-height: 20px;
+}
+.summary-box {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1rem;
+  min-height: 20px;
+  overflow-y: auto;
+}
+
+/* ---------- Small Utilities ---------- */
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #4a5568;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .main-layout {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .left-panel {
+    width: 42%;
+  }
+
+  .right-panel {
+    width: 58%;
+  }
+}
+
+@media (max-width: 820px) {
+  .main-layout {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+  }
+
+  .summary-box {
+    min-height: 180px;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  /* Stack labels above inputs on small screens for readability */
+  .form-block {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-block label {
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 0.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 60px;
+    top: 10px;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .navbar-brand .brand-logo {
+    font-size: 1.25rem;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-icon {
+    font-size: 1.25rem;
+  }
+
+  .project-details-box,
+  .leave-application-box,
+  .right-panel {
+    padding: 1rem;
+  }
+
+  .summary-box {
+    min-height: 140px;
+  }
+}
+
+/* ---------- Accessibility and Focus ---------- */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(66,153,225,0.14);
+  outline-offset: 2px;
+}
+
+/* ---------- Small visual tweaks ---------- */
+.project-details-box .form-block label {
+  color: rgba(255,255,255,0.9);
+}
+
+.project-details-box input,
+.project-details-box select {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-details-box input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+
+.profile-overlay {
+  position:absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+  }
+
+.profile-card {
+  width: 480px;
+  height: 95%;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  animation: fadeIn 0.4s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.profile-header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+.header-info h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+.header-info h3 {
+  margin: 0.2rem 0;
+  font-weight: 500;
+}
+.header-info p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Contact */
+.profile-contact {
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  font-size: 0.95rem;
+}
+.profile-contact p {
+  margin: 0.4rem 0;
+}
+.tags {
+  margin-top: 0.5rem;
+}
+.tags span {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 0.4rem;
+}
+
+/* Sections */
+.profile-section {
+  padding: 1rem 1.5rem;
+}
+.profile-section h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.profile-section p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.profile-footer {
+  padding: 1rem;
+  text-align: right;
+}
+.profile-footer button {
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.profile-footer button:hover {
+  background: #1a5fd1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

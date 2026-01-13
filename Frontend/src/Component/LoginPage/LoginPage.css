@@ -1,0 +1,114 @@
+/* LoginPage.css */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+ 
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+  /* Elliptical curve */
+  clip-path: ellipse(100% 100% at 0% 50%);
+}
+ 
+.promo-title {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+ 
+.brand {
+  color: #B22222;
+}
+ 
+ 
+.promo-text {
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 80%;
+}
+ 
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+ 
+.login-form {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+ 
+.form-input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+ 
+.form-button {
+  width: 95%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
+.form-button:hover {
+  background-color: #0056b3;
+}
+ 
+.form-divider {
+  text-align: center;
+  margin: 10px 0;
+  color: #aaa;
+}
+ 
+.social-login {
+  display: flex;
+  justify-content: space-around;
+}
+ 
+.form-request {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+ 
+.form-request:hover {
+  color: #0056b3;
+}
+ 
+.form-error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+ 
+.form-success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+ 
